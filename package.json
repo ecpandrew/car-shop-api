@@ -1,0 +1,26 @@
+{
+  "name": "carshopservices",
+  "version": "1.0.0",
+  "description": "O Car Shop Services é um projeto desenvolvido junto a disciplina Projeto e Desenvolvimento de Software (PDS), que visa criar uma aplicação WEB para a realização e oferecimento de itens e serviços do ramo automotivo, buscando melhorar e facilitar a demanda dos usuários especialistas na área ou até mesmo dos que desejam apenas uma rápida troca dos pneus.\r ## Diagrama de Casos de Uso\r ![Diagrama de Classes](Diagramas/CasosUso.drawio.svg)\r ## Diagrama de Classes de Análise\r ![Diagrama de Classes](Diagramas/Classes.drawio.svg)\r ## Diagrama de Sequência\r ![Diagrama de Sequência](Diagramas/Sequencia.drawio.svg)\r ## Diagrama de Estados\r ![Diagrama de Estados](Diagramas/Estados.drawio.svg)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yanturck/carshopservices.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yanturck/carshopservices/issues"
+  },
+  "homepage": "https://github.com/yanturck/carshopservices#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "http": "0.0.1-security",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.3.0"
+  }
+}
