@@ -1,12 +1,15 @@
+const usuariosController = require("../controllers/usuario.controller.js");
+
 module.exports = app => {
-    const usuarios = require("../controllers/usuario.controller.js");
 
     // Create a new Customer
-    app.post("/usuarios", usuarios.create);
-
-    // Retrieve all Customers
-    app.get("/usuarios/all", usuarios.findAll);
-
+    app.post("/usuarios/consumidor", usuariosController.createConsumidor);
+    app.post("/usuarios/produtor", usuariosController.createProdutor);
+    app.delete("/usuarios/:email", usuariosController.deleteUser);
+    app.get("/usuarios/all", usuariosController.findAll);
+    app.get("/usuarios/consumidor/:email", usuariosController.findConsumerByEmail);
+    app.get("/usuarios/produtor/:email", usuariosController.findProducerByEmail);
+    app.get("/usuarios/:email", usuariosController.findUserByEmail);
 
 
 
