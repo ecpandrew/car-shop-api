@@ -121,7 +121,8 @@ AnuncioModel.getItemByIdCategoria = (idCategoria, result) => {
     sql.query("SELECT ITEM.idITEM as idItem," +
         "ITEM.DISPONIBILIDADE AS disponibilidade," +
         "ITEM.disponibilidadeENTREGA as disponibilidadeEntrega, " +
-        "ITEM.ANUNCIOS_idANUNCIO AS idAnuncio, ANUNCIOS.USUARIO_EMAIL AS userEmail, ANUNCIOS.NOME AS nome, ANUNCIOS.DESCRICAO AS descricao, ANUNCIOS.VALOR AS valor FROM ITEM " +
+        "ITEM.ANUNCIOS_idANUNCIO AS idAnuncio, ANUNCIOS.USUARIO_EMAIL AS userEmail, ANUNCIOS.NOME AS nome, " +
+        "ANUNCIOS.DESCRICAO AS descricao, ANUNCIOS.VALOR AS valor FROM ITEM " +
         "INNER JOIN ANUNCIOS ON ITEM.ANUNCIOS_idANUNCIO=ANUNCIOS.idANUNCIO "+
         "WHERE ANUNCIOS.CATEGORIAS_idCATEGORIAS = "+sql.escape(idCategoria),
         (err, res) => {

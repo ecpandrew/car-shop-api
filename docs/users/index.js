@@ -22,10 +22,17 @@ const createItem = require("../anuncio/create-item");
 const createService = require("../anuncio/create-service");
 const getAllAnuncios = require("../anuncio/get-all-anuncios");
 const getAllItens = require("../anuncio/get-all-itens");
+
 const getAllServices = require("../anuncio/get-all-service");
 const getAnuncioByCategoryId = require("../anuncio/get-anuncio-by-category");
 const getItemByCategoryId = require("../anuncio/get-item-by-category");
 const getServiceByCategoryId = require("../anuncio/get-service-by-category");
+
+
+const getAllGuardarSolictacao = require("../guardar-solicitacao/get-all-guardar-solitacao");
+const getAllGuardarSolictacaoByEmail = require("../guardar-solicitacao/get-all-guardar-solitacao-by-email");
+const createGuardarSolcitacao = require("../guardar-solicitacao/guardar-solicitacao");
+
 
 module.exports = {
     paths:{
@@ -87,7 +94,15 @@ module.exports = {
         },
         '/anuncios/servico/{category}':{
             ...getServiceByCategoryId,
-        }
+        },
+
+        '/guardar-solicitacao':{
+            ...createGuardarSolcitacao,
+            ...getAllGuardarSolictacao
+        },
+        '/guardar-solicitacao/{email}':{
+            ...getAllGuardarSolictacaoByEmail,
+        },
 
 
     }

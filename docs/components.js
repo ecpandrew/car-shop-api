@@ -462,6 +462,54 @@ module.exports = {
                 },
             },
 
+            GuardarSolicitacao: {
+                type: "object", // data type
+                properties: {
+
+                    quantidade: {
+                        type: "number", // data type
+                        description: "Quantidade",
+                        example: 1, // example of a completed value
+                    },
+                    idSolicitacao: {
+                        type: "number", // data type
+                        description: "Id da solicitacao", // desc
+                        example: 3 // example of a completed value
+                    },
+                    idAnuncio: {
+                        type: "number", // data type
+                        description: "Id do anuncio", // desc
+                        example: 3 // example of a completed value
+                    }
+
+                },
+            },
+            GuardarSolicitacaoWithId: {
+                type: "object", // data type
+                properties: {
+                    idGuardarSolicitacao: {
+                        type: "number", // data type
+                        description: "Id da solicitacao guardada", // desc
+                        example: 3 // example of a completed value
+                    },
+                    quantidade: {
+                        type: "number", // data type
+                        description: "Quantidade",
+                        example: 1, // example of a completed value
+                    },
+                    idSolicitacao: {
+                        type: "number", // data type
+                        description: "Id da solicitacao", // desc
+                        example: 3 // example of a completed value
+                    },
+                    idAnuncio: {
+                        type: "number", // data type
+                        description: "Id do anuncio", // desc
+                        example: 3 // example of a completed value
+                    }
+
+                },
+            },
             // error model
             Error: {
                 type: "object", //data type

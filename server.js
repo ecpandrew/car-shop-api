@@ -23,6 +23,7 @@ require("./routes/usuario.routes.js")(app);
 
 require("./routes/solicitacao.routes.js")(app);
 require("./routes/anuncio.routes.js")(app);
+require("./routes/guardar-solicitacao.routes.js")(app);
 
 app.listen(3333, () => {
     console.log("A API está rodando na porta 3333.");
