@@ -18,6 +18,14 @@ const createSolicitation = require("../solicitation/create-solicitation");
 const getAllSolicitation = require('../solicitation/get-all-soliciation');
 const getSolicitationByEmail = require('../solicitation/get-solicitation-email');
 
+const createItem = require("../anuncio/create-item");
+const createService = require("../anuncio/create-service");
+const getAllAnuncios = require("../anuncio/get-all-anuncios");
+const getAllItens = require("../anuncio/get-all-itens");
+const getAllServices = require("../anuncio/get-all-service");
+const getAnuncioByCategoryId = require("../anuncio/get-anuncio-by-category");
+const getItemByCategoryId = require("../anuncio/get-item-by-category");
+const getServiceByCategoryId = require("../anuncio/get-service-by-category");
 
 module.exports = {
     paths:{
@@ -56,6 +64,31 @@ module.exports = {
         },
         '/solicitacao/{email}':{
             ...getSolicitationByEmail,
+        },
+
+
+
+        '/anuncios/item':{
+            ...createItem,
+            ...getAllItens,
+        },
+        '/anuncios/servico':{
+            ...createService,
+            ...getAllServices
+        },
+        '/anuncios':{
+            ...getAllAnuncios,
+        },
+        '/anuncios/{category}':{
+            ...getAnuncioByCategoryId,
+        },
+        '/anuncios/item/{category}':{
+            ...getItemByCategoryId,
+        },
+        '/anuncios/servico/{category}':{
+            ...getServiceByCategoryId,
         }
+
+
     }
 }

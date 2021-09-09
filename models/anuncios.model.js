@@ -4,6 +4,8 @@ const AnuncioModel = function(anuncio) {
     this.valor = anuncio.valor;
     this.categorias_idcategorias = anuncio.categorias_idcategorias;
     this.nome = anuncio.nome;
+    this.usuario_email = anuncio.userEmail;
+
 };
 
 AnuncioModel.create = (novoAnuncio, result) => {
@@ -49,6 +51,7 @@ AnuncioModel.getAll = result => {
         " DESCRICAO AS descricao," +
         "VALOR as valor," +
         "CATEGORIAS_idCATEGORIAS AS idCategoria," +
+        "USUARIO_EMAIL AS userEmail," +
         "NOME as nome FROM ANUNCIOS", (err, res) => {
         if (err) {
             console.log("error: ", err);
@@ -97,6 +100,7 @@ AnuncioModel.getAnuncioByIdCategoria = (idCategoria, result) => {
         " DESCRICAO AS descricao," +
         "VALOR as valor," +
         "CATEGORIAS_idCATEGORIAS AS idCategoria," +
+        "USUARIO_EMAIL AS userEmail," +
         "NOME as nome FROM ANUNCIOS " +
         "WHERE CATEGORIAS_idCATEGORIAS = "+sql.escape(idCategoria),
         (err, res) => {
@@ -117,7 +121,7 @@ AnuncioModel.getItemByIdCategoria = (idCategoria, result) => {
     sql.query("SELECT ITEM.idITEM as idItem," +
         "ITEM.DISPONIBILIDADE AS disponibilidade," +
         "ITEM.disponibilidadeENTREGA as disponibilidadeEntrega, " +
-        "ITEM.ANUNCIOS_idANUNCIO AS idAnuncio, ANUNCIOS.NOME AS nome, ANUNCIOS.DESCRICAO AS descricao, ANUNCIOS.VALOR AS valor FROM ITEM " +
+        "ITEM.ANUNCIOS_idANUNCIO AS idAnuncio, ANUNCIOS.USUARIO_EMAIL AS userEmail, ANUNCIOS.NOME AS nome, ANUNCIOS.DESCRICAO AS descricao, ANUNCIOS.VALOR AS valor FROM ITEM " +
         "INNER JOIN ANUNCIOS ON ITEM.ANUNCIOS_idANUNCIO=ANUNCIOS.idANUNCIO "+
         "WHERE ANUNCIOS.CATEGORIAS_idCATEGORIAS = "+sql.escape(idCategoria),
         (err, res) => {
@@ -133,10 +137,11 @@ AnuncioModel.getItemByIdCategoria = (idCategoria, result) => {
             result(null, res);
         });
 };
+
 AnuncioModel.getServicoByIdCategoria = (idCategoria, result) => {
     sql.query("SELECT SERVICO.idSERVICO as idServico," +
         "SERVICO.DISPONIBILIDADEREALIZACAO AS disponibilidadeRealizacao," +
-        "SERVICO.ANUNCIOS_idANUNCIO AS idAnuncio, ANUNCIOS.NOME AS nome, ANUNCIOS.DESCRICAO AS descricao, ANUNCIOS.VALOR AS valor FROM SERVICO " +
+        "SERVICO.ANUNCIOS_idANUNCIO AS idAnuncio, ANUNCIOS.USUARIO_EMAIL AS userEmail, ANUNCIOS.NOME AS nome, ANUNCIOS.DESCRICAO AS descricao, ANUNCIOS.VALOR AS valor FROM SERVICO " +
         "INNER JOIN ANUNCIOS ON SERVICO.ANUNCIOS_idANUNCIO=ANUNCIOS.idANUNCIO "+
         "WHERE ANUNCIOS.CATEGORIAS_idCATEGORIAS = "+sql.escape(idCategoria),
         (err, res) => {

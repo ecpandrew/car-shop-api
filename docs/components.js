@@ -209,6 +209,259 @@ module.exports = {
                     }
                 },
             },
+            Item: {
+                type: "object", // data type
+                properties: {
+
+                    descricao: {
+                        type: "string", // data type
+                        description: "Descrição do item", // desc
+                        example: "Esta é a descrição do item", // example of a completed value
+                    },
+                    valor: {
+                        type: "number", // data type
+                        description: "Valor do item", // desc
+                        example: 144.00 // example of a completed value
+                    },
+                    idCategoria: {
+                        type: "number", // data type
+                        description: "Id da categoria", // desc
+                        example: 1 // example of a completed value
+                    },
+                    nome: {
+                        type: "string", // data type
+                        description: "Nome do item", // desc
+                        example: "Pastilha de Freio Bosh" // example of a completed value
+                    },
+                    disponibilidade: {
+                        type: "number", // data type
+                        description: "Quantidades de Itens Disponíveis", // desc
+                        example: 10 // example of a completed value
+                    },
+                    disponibilidadeEntrega: {
+                        type: "string", // data type
+                        description: "Informações sobre a disponibilidade entrega", // desc
+                        example: "Disponpivel para Entrega" // example of a completed value
+                    },
+                    userEmail: {
+                        type: "string", // data type
+                        description: "Informações do criador do anuncio", // desc
+                        example: "loja-email@gmail.com" // example of a completed value
+                    },
+                },
+            },
+            Service: {
+                type: "object", // data type
+                properties: {
+
+                    descricao: {
+                        type: "string", // data type
+                        description: "Descrição do serviço", // desc
+                        example: "Esta é a descrição do serviço", // example of a completed value
+                    },
+                    valor: {
+                        type: "number", // data type
+                        description: "Valor do serviço", // desc
+                        example: 144.00 // example of a completed value
+                    },
+                    idCategoria: {
+                        type: "number", // data type
+                        description: "Id da categoria", // desc
+                        example: 1 // example of a completed value
+                    },
+                    nome: {
+                        type: "string", // data type
+                        description: "Nome do serviço", // desc
+                        example: "Limpeza de Bancos" // example of a completed value
+                    },
+                    disponibilidadeRealizacao: {
+                        type: "string", // data type
+                        description: "Informações sobre a disponibilidade de realização", // desc
+                        example: "Disponpivel para Realização" // example of a completed value
+                    },
+                    userEmail: {
+                        type: "string", // data type
+                        description: "Informações do criador do anuncio", // desc
+                        example: "loja-email@gmail.com" // example of a completed value
+                    },
+                },
+            },
+            Anuncio: {
+                type: "object", // data type
+                properties: {
+                    idAnuncio: {
+                        type: "number", // data type
+                        description: "Id do anuncio", // desc
+                        example: 1, // example of a completed value
+                    },
+                    descricao: {
+                        type: "string", // data type
+                        description: "Descrição do anuncio", // desc
+                        example: "Esta é a descrição do anuncio", // example of a completed value
+                    },
+                    valor: {
+                        type: "number", // data type
+                        description: "Valor do anuncio", // desc
+                        example: 144.00 // example of a completed value
+                    },
+                    idCategoria: {
+                        type: "number", // data type
+                        description: "Id da categoria", // desc
+                        example: 1 // example of a completed value
+                    },
+                    userEmail: {
+                        type: "number", // data type
+                        description: "Informações do criador do anuncio", // desc
+                        example: "loja-email@gmail.com" // example of a completed value
+                    },
+                    nome: {
+                        type: "string", // data type
+                        description: "Nome do anuncio", // desc
+                        example: "Pastilha de Freio Bosh" // example of a completed value
+                    }
+                },
+            },
+
+
+
+            ItemWithId: {
+                type: "object", // data type
+                properties: {
+
+                    idItem: {
+                        type: "number", // data type
+                        description: "id do item",
+                        example: 1, // example of a completed value
+                    },
+                    disponibilidade: {
+                        type: "number", // data type
+                        description: "Quantidades de Itens Disponíveis", // desc
+                        example: 10 // example of a completed value
+                    },
+                    disponibilidadeEntrega: {
+                        type: "string", // data type
+                        description: "Informações sobre a disponibilidade entrega", // desc
+                        example: "Disponpivel para Entrega" // example of a completed value
+                    },
+                    idAnuncio: {
+                        type: "number", // data type
+                        description: "Informações do anuncio", // desc
+                        example: 3 // example of a completed value
+                    },
+                },
+            },
+            ServiceWithId: {
+                type: "object", // data type
+                properties: {
+
+                    idServico: {
+                        type: "number", // data type
+                        description: "id do servico",
+                        example: 1, // example of a completed value
+                    },
+                    disponibilidadeRealizacao: {
+                        type: "string", // data type
+                        description: "Quantidades sobre a disponibilidade de realizacao", // desc
+                        example: "disponivel para realização" // example of a completed value
+                    },
+                    idAnuncio: {
+                        type: "number", // data type
+                        description: "Informações do anuncio", // desc
+                        example: 3 // example of a completed value
+                    }
+                },
+            },
+
+            ItemExtended: {
+                type: "object", // data type
+                properties: {
+
+                    idItem: {
+                        type: "number", // data type
+                        description: "id do item",
+                        example: 1, // example of a completed value
+                    },
+                    disponibilidade: {
+                        type: "number", // data type
+                        description: "Quantidades de Itens Disponíveis", // desc
+                        example: 10 // example of a completed value
+                    },
+                    disponibilidadeEntrega: {
+                        type: "string", // data type
+                        description: "Informações sobre a disponibilidade entrega", // desc
+                        example: "Disponpivel para Entrega" // example of a completed value
+                    },
+                    idAnuncio: {
+                        type: "number", // data type
+                        description: "Informações do anuncio", // desc
+                        example: 3 // example of a completed value
+                    },
+                    userEmail: {
+                        type: "number", // data type
+                        description: "Informações do criador do anuncio", // desc
+                        example: "loja-email@gmail.com" // example of a completed value
+                    },
+                    nome: {
+                        type: "string", // data type
+                        description: "Nome do anuncio", // desc
+                        example: "Pastilha de Freio Bosh" // example of a completed value
+                    },
+                    descricao: {
+                        type: "string", // data type
+                        description: "Descrição do anuncio", // desc
+                        example: "Esta é a descrição do anuncio", // example of a completed value
+                    },
+                    valor: {
+                        type: "number", // data type
+                        description: "Valor do anuncio", // desc
+                        example: 144.00 // example of a completed value
+                    }
+                },
+            },
+
+            ServiceExtended: {
+                type: "object", // data type
+                properties: {
+
+                    idServico: {
+                        type: "number", // data type
+                        description: "id do servico",
+                        example: 1, // example of a completed value
+                    },
+                    disponibilidadeRealizacao: {
+                        type: "string", // data type
+                        description: "Quantidades sobre a disponibilidade de realizacao", // desc
+                        example: "disponivel para realização" // example of a completed value
+                    },
+                    idAnuncio: {
+                        type: "number", // data type
+                        description: "Informações do anuncio", // desc
+                        example: 3 // example of a completed value
+                    }
+                    ,
+                    userEmail: {
+                        type: "number", // data type
+                        description: "Informações do criador do anuncio", // desc
+                        example: "loja-email@gmail.com" // example of a completed value
+                    },
+                    nome: {
+                        type: "string", // data type
+                        description: "Nome do anuncio", // desc
+                        example: "Pastilha de Freio Bosh" // example of a completed value
+                    },
+                    descricao: {
+                        type: "string", // data type
+                        description: "Descrição do anuncio", // desc
+                        example: "Esta é a descrição do anuncio", // example of a completed value
+                    },
+                    valor: {
+                        type: "number", // data type
+                        description: "Valor do anuncio", // desc
+                        example: 144.00 // example of a completed value
+                    }
+                },
+            },
+
             // error model
             Error: {
                 type: "object", //data type

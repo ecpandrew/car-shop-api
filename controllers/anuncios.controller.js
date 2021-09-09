@@ -15,6 +15,8 @@ exports.create = (req, res) => {
         valor : req.body.valor,
         categorias_idcategorias : req.body.idCategoria,
         nome : req.body.nome,
+        userEmail : req.body.userEmail
+
     });
 
     Anuncio.create(anuncio, (err, data) => {
@@ -46,6 +48,7 @@ exports.createItem = (req, res) => {
         valor : req.body.valor,
         categorias_idcategorias : req.body.idCategoria,
         nome : req.body.nome,
+        userEmail : req.body.userEmail
 
     });
     Anuncio.create(anuncio, (err, insertId) => {
@@ -74,7 +77,8 @@ exports.createItem = (req, res) => {
                         categorias_idcategorias : req.body.idCategoria,
                         nome : req.body.nome,
                         disponibilidade: req.body.disponibilidade,
-                        disponibilidadeentrega: req.body.disponibilidadeEntrega
+                        disponibilidadeentrega: req.body.disponibilidadeEntrega,
+                        userEmail : req.body.userEmail
 
                     });
                 }
@@ -97,6 +101,7 @@ exports.createServico = (req, res) => {
         valor : req.body.valor,
         categorias_idcategorias : req.body.idCategoria,
         nome : req.body.nome,
+        userEmail : req.body.userEmail
 
     });
     Anuncio.create(anuncio, (err, insertId) => {
@@ -124,6 +129,7 @@ exports.createServico = (req, res) => {
                         categorias_idcategorias : req.body.idCategoria,
                         nome : req.body.nome,
                         disponibilidaderealizacao: req.body.disponibilidadeRealizacao,
+                        userEmail : req.body.userEmail
 
                     });
                 }
