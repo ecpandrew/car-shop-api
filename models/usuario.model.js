@@ -19,6 +19,31 @@ const UsuarioModel = function(customer) {
         result(null, novoUsuario);
     });
 };
+
+UsuarioModel.login = (login, result) => {
+    sql.query("INSERT INTO LOGIN SET ?", login, (err, res) => {
+        if (err) {
+            console.log("error: ", err);
+            result(err, null);
+            return;
+        }
+        result(null, login);
+    });
+};
+
+UsuarioModel.getLoggedInUser = result => {
+    sql.query("SELECT EMAIL AS email FROM LOGIN ORDER BY idLOGIN DESC LIMIT 1", (err, res) => {
+        if (err) {
+            console.log("error: ", err);
+            result(err, null);
+            return;
+        }
+        console.log("MODEL: ", res[0]);
+
+        result(null, res[0]);
+    });
+};
+
 UsuarioModel.delete = (email, result) => {
     sql.query("DELETE FROM USUARIO WHERE EMAIL = "+sql.escape(email), (err, res) => {
         if (err) {
@@ -96,7 +121,7 @@ UsuarioModel.getProducerByEmail = (email, result) => {
     });
 };
 UsuarioModel.getUserByEmail = (email, result) => {
-    sql.query("SELECT email,nome, telefone FROM USUARIO WHERE email = "+sql.escape(email), (err, res) => {
+    sql.query("SELECT email,nome,senha, telefone FROM USUARIO WHERE email = "+sql.escape(email), (err, res) => {
         if (err) {
             console.log("error: ", err);
             result(null, err);

@@ -11,6 +11,9 @@ module.exports = app => {
     app.get("/usuarios/produtor/:email", usuariosController.findProducerByEmail);
     app.get("/usuarios/:email", usuariosController.findUserByEmail);
 
+    app.post("/login", usuariosController.userLogIn);
+    app.get("/login", usuariosController.userGetLogIn);
+
 
 
 };

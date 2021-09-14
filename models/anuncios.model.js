@@ -35,6 +35,8 @@ AnuncioModel.createItem = (item, result) => {
     });
 };
 
+
+
 AnuncioModel.createServico = (servico, result) => {
     sql.query("INSERT INTO SERVICO SET ?", servico, (err, res) => {
         if (err) {

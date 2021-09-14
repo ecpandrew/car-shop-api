@@ -177,3 +177,44 @@ exports.findUserByEmail  = (req, res) => {
         else res.send(data);
     });
 };
+
+exports.userGetLogIn  = (req, res) => {
+    console.log("ola")
+    Usuario.getLoggedInUser((err, data) => {
+        if (err)
+            res.status(500).send({
+                message:
+                    err.message || "Some error occurred while retrieving logged user."
+            });
+        else res.send(data);
+    });
+
+};
+
+exports.userLogIn  = (req, res) => {
+    const email = req.body.email
+    const senha = req.body.senha
+    console.log(email,senha)
+    Usuario.getUserByEmail(email,(err, data) => {
+        if (err)
+            res.status(500).send({
+                message:
+                    err.message || "Some error occurred while retrieving customers."
+            });
+        else {
+            if(senha === data.senha){
+                Usuario.login({"EMAIL": email}, (err, data)=>{
+                    if(err){
+                        res.status(500).send({message: err.message || "Algum erro ocorreu"});
+                    }
+
+                    res.send("ok")
+                })
+
+            }else{
+                res.send("senha incorreta")
+            }
+
+        }
+    });
+};
