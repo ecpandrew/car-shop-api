@@ -13,6 +13,8 @@ exports.create = (req, res) => {
     const anuncio = new Anuncio({
         descricao : req.body.descricao,
         valor : req.body.valor,
+        imagem : req.body.imagem,
+
         categorias_idcategorias : req.body.idCategoria,
         nome : req.body.nome,
         userEmail : req.body.userEmail
@@ -47,6 +49,8 @@ exports.createItem = (req, res) => {
         descricao : req.body.descricao,
         valor : req.body.valor,
         categorias_idcategorias : req.body.idCategoria,
+        imagem : req.body.imagem,
+
         nome : req.body.nome,
         userEmail : req.body.userEmail
 
@@ -76,6 +80,7 @@ exports.createItem = (req, res) => {
                         valor : req.body.valor,
                         categorias_idcategorias : req.body.idCategoria,
                         nome : req.body.nome,
+                        imagem : req.body.imagem,
                         disponibilidade: req.body.disponibilidade,
                         disponibilidadeentrega: req.body.disponibilidadeEntrega,
                         userEmail : req.body.userEmail
@@ -100,6 +105,7 @@ exports.createServico = (req, res) => {
         descricao : req.body.descricao,
         valor : req.body.valor,
         categorias_idcategorias : req.body.idCategoria,
+        imagem : req.body.imagem,
         nome : req.body.nome,
         userEmail : req.body.userEmail
 
@@ -128,6 +134,7 @@ exports.createServico = (req, res) => {
                         valor : req.body.valor,
                         categorias_idcategorias : req.body.idCategoria,
                         nome : req.body.nome,
+                        imagem : req.body.imagem,
                         disponibilidaderealizacao: req.body.disponibilidadeRealizacao,
                         userEmail : req.body.userEmail
 
