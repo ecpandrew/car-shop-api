@@ -65,10 +65,16 @@ AnuncioModel.getAll = result => {
 };
 
 AnuncioModel.getAllItems = result => {
-    sql.query("SELECT idITEM as idItem," +
-        "DISPONIBILIDADE AS disponibilidade," +
-        "disponibilidadeENTREGA as disponibilidadeEntrega," +
-        "ANUNCIOS_idANUNCIO AS idAnuncio FROM ITEM", (err, res) => {
+    sql.query("SELECT ITEM.idITEM as idItem," +
+        "ITEM.DISPONIBILIDADE AS disponibilidade," +
+        "ITEM.disponibilidadeENTREGA as disponibilidadeEntrega, " +
+        "ITEM.ANUNCIOS_idANUNCIO AS idAnuncio, ANUNCIOS.USUARIO_EMAIL AS userEmail, ANUNCIOS.NOME AS nome, " +
+        "ANUNCIOS.DESCRICAO AS descricao, ANUNCIOS.VALOR AS valor FROM ITEM " +
+        "INNER JOIN ANUNCIOS ON ITEM.ANUNCIOS_idANUNCIO=ANUNCIOS.idANUNCIO ",
+
+
+
+        (err, res) => {
         if (err) {
             console.log("error: ", err);
             result(null, err);
@@ -81,9 +87,12 @@ AnuncioModel.getAllItems = result => {
 };
 
 AnuncioModel.getAllServices = result => {
-    sql.query("SELECT idSERVICO AS idServico," +
-        "disponibilidadeREALIZACAO as disponibilidadeRealizacao," +
-        "ANUNCIOS_idANUNCIO AS idAnuncio FROM SERVICO", (err, res) => {
+    sql.query("SELECT SERVICO.idSERVICO as idServico," +
+        "SERVICO.DISPONIBILIDADEREALIZACAO AS disponibilidadeRealizacao," +
+        "SERVICO.ANUNCIOS_idANUNCIO AS idAnuncio, ANUNCIOS.USUARIO_EMAIL AS userEmail, ANUNCIOS.NOME AS nome, ANUNCIOS.DESCRICAO AS descricao, ANUNCIOS.VALOR AS valor FROM SERVICO " +
+        "INNER JOIN ANUNCIOS ON SERVICO.ANUNCIOS_idANUNCIO=ANUNCIOS.idANUNCIO "
+
+        , (err, res) => {
         if (err) {
             console.log("error: ", err);
             result(null, err);
